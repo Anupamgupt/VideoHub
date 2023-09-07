@@ -29,11 +29,9 @@ export const signin=async(req,res,next)=>{
         const {password,...others}=user._doc;
         res.cookie("access_token",token,{
             httpOnly:true,
-
         })
         .status(200)
         .json(others);
-
     }catch(e){
         next(e);
     }
