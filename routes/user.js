@@ -8,14 +8,13 @@ const router=express.Router();
 router.put("/:id",verifyToken,update);
 
 // delete
-router.delete("/:id",deleteUser);
-
+router.delete("/:id",verifyToken,deleteUser);
 
 // get
 router.get("/find/:id",getUser);
 
 // subscribe
-router.put("/sub/:id",subscribe)
+router.put("/sub/:id",verifyToken,subscribe)
 // unsubsctibe
 router.put("/sub/:id",unsubsctibe)
 // like 
